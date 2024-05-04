@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">            
+
+            <form action="/lista_repuestos/" method="POST" class="card card-body" onsubmit="alert('Ha sido ingresado con exito')">
+                <img src="{% static 'images\descargazf.png' %}" alt="descargazf" width="200 " class="d-flex align-self-center mr-3">
+
+                <h1 class="text-center py-5">Inventario</h1>
+                {{error}}
+                {% csrf_token%}            
+               <!--  {{form.as_p}} -->
+
+                <label for="cars">Eliga un sistema de infraestrcutura:</label>
+                <select name="cars" id="cars">
+                  <option value="electrico">Electrico</option>
+                  <option value="mecanico">Mecanico</option>
+                  <option value="controlAcceso">Control de Acceso</option>
+                  <option value="sci">Sistema Contra Incendios</option>
+                  <option value="cctv">CCTV</option>
+                </select><br>
+
+
+                
+                <div class="mb-3">
+                    <label for="referencia">Referencia </label>
+                    <input type="text" name="referencia" id="referencia" placeholder="referencia" class="form-control">
+                </div> 
+
+
+                <div class="mb-3">
+                    <label for="cantidad">Cantidad </label>
+                    <input type="number" name="cantidad" id="cantidad" placeholder="cantidad" class="form-control">
+                </div> 
+
+                <div class="mb-3">
+                    <label for="marca">Marca </label>
+                    <input type="text" name="marca" id="marca" placeholder="marca" class="form-control">
+                </div> 
+             
+                <div class="mb-3">
+                    <label for="username">Fecha de Entrada </label>
+                    <input type="date" name="username" id="username" placeholder="Empresa" class="form-control">
+                </div> 
+
+                <div class="mb-3">
+                    <label for="username">Fecha Salida </label>
+                    <input type="date" name="username" id="username" placeholder="Fecha Salida" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="username">Persona que retira </label>
+                    <select name="cars" id="cars">
+                        <option value="Orlando Cardenas">Orlando Cardenas</option>
+                        <option value="Juan Castañeda">Juan Castañeda</option>
+                        <option value="Jhonathan Ciprian">Jhonathan Ciprian</option>
+                        <option value="Diana Cortes">Diana Cortes</option>
+                        <option value="Leonardo Lopez">Leonardo Lopez</option>
+                      </select>
+                </div> 
+
+                <!-- <div>
+                    <input type="submit" value="Crear Solicitud">
+                </div> -->
+             
+                <button type="submit">
+                    Ingresar
+                </button><br>
+
+                <button type="submit">
+                    Retirar
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+</main>
+
+{% endblock %}

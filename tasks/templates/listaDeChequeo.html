@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+       <h1>Checklist Datacenter</h1>
+    </div>
+
+    <!-- CRAH 2_01 -->
+    <div>  
+        <nav class="navbar navbar-expand-lg" style="background-color: #5cd0f3;font: 1em sans-serif; background-image: linear-gradient(yellow, rgb(57, 182, 57));">
+            <div class="container">
+              <a class="navbar-brand" href="#"><strong>DZF | CheckList de Infraestrctura Piso 2</strong></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"> <strong>Home | ZFB</strong> </a>
+                    </li>
+                             
+                    
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listaDeChequeo2' %}"><strong>PISO 1</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listaDeChequeo' %}"><strong>PISO 2</strong></a>
+                    </li>     
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listaDeChequeo3' %}"><strong>PISO 3</strong></a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cubierta' %}"><strong>CUBIERTA</strong></a>
+                    </li>   
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup/">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signin/">Iniciar Sesion</a>
+                    </li>
+                    {% endif %}
+                </ul>
+              </div>
+            </div>
+        </nav>      
+
+
+        <div id="carouselExampleIndicators"  class="row row-cols-6 row-cols-md-6 g-4  carousel-inner">
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                <h3 class="align-self-center" >CRAH 2-01</h3>            
+                <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                          <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                        </li>
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                          <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                        </li>
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                          <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                          </li>
+                      </ul>                
+                </div>
+              </div>
+            </div>
+    
+            <!-- CRAH 2_02 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >CRAH 2-02</h3>            
+                  <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <!-- CRAH 2_03 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >CRAH 2-03</h3>            
+                  <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <!-- CRAH 2_04 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >CRAH 2-04</h3>            
+                  <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <!-- CRAH 2_05 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >CRAH 2-05</h3>            
+                  <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <!-- CRAH 2_06 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >CRAH 2-06</h3>            
+                  <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="..." height="200">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+    
+            <!-- PANEL CONTRAINCENDIOS PISO 2 -->
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >Panel S.C.I</h3>            
+                  <img src="{% static 'images/vigilant.jpg' %}" class="card-img-top" alt="..." height="250">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >Acceso</h3>            
+                  <img src="{% static 'images/SCA2.png' %}" class="card-img-top" alt="..." height="250">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >Generador 3</h3>            
+                  <img src="{% static 'images/genrator.jpg' %}" class="card-img-top" alt="..." height="250">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >Tanques ACPM</h3>            
+                  <img src="{% static 'images/ACPM.png' %}" class="card-img-top" alt="..." height="250">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images\descargazf.png' %}" class="card-title align-self-center"  width="60">
+                  <h3 class="align-self-center" >Fancoils</h3>            
+                  <img src="{% static 'images/fancoil.jpg' %}" class="card-img-top" alt="..." height="250">
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-success" type="checkbox" value="" id="firstCheckbox" >
+                            <label class="form-check-label" for="firstCheckbox">ON / Sin alarmas</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-warning" type="checkbox" value="" id="secondCheckbox">
+                            <label class="form-check-label" for="secondCheckbox">STANDBY</label>
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1 btn btn-danger" type="checkbox" value="" id="thirdCheckbox">
+                            <label class="form-check-label" for="thirdCheckbox">OFF / CRITICAL</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input class="form-check-input me-1 btn btn-info" type="checkbox" value="" id="thirdCheckbox">
+                              <label class="form-check-label" for="thirdCheckbox">PERDIDA COMM</label>
+                            </li>
+                        </ul>                
+                  </div>
+                </div>
+            </div>
+    
+    
+    
+    
+    
+            <!-- <div class="col">
+              <div class="card">
+                <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/images2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>-->
+        </div>
+        
+        
+    </div>
+    
+
+
+    
+    
+</main>
+{% endblock %}

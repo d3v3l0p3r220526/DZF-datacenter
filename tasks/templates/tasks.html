@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div>
+                <h1 class="text-center py-2 ">Solicitudes Pendientes Datacenter M5/L16A</h1>
+            </div>
+
+           
+                <!-- <img class="card card-body"  src="{% static 'images\descargazf.png' %}" width="300"  alt="logozfb">
+                <img class="card card-body"  src="{% static 'images\images.jpg' %}" width="300" alt="logozfb">
+                <img class="card card-body"  src="{% static 'images\movistar.jpg' %}" width="300"  alt="logozfb">
+
+                 -->
+            
+
+            <ul style="background-color: rgb(237, 202, 22);" class="list-group">
+                {% for task in tasks %}
+                <li class="list-group-item-action active mx-4 px-4 card card-title">
+                    <a href="{% url 'task_detail' task.id %}">
+    
+                        <header class="d-flex justify-content-between">
+                            {% if task.important %}
+                            <div class="container-fluid">
+                                <h1 class=" fw-bold text-success">{{task.empresa}}</h1>
+                            </div>
+                            {% else %}
+                                <h1 class="fw-bold text-info">{{task.empresa}}</h1>
+                                <!-- <p>{{task.empresa}}</p> -->
+                            {% endif %}
+                            
+                            <p class="btn btn-secondary fw-bold mt-3">{{task.user.username}}</p>
+                            
+                        </header>
+
+                      
+                        <p class="fw-bold">Fecha Inicial:{{task.date_ini}} /Fecha final: {{task.date_end}} </p>
+                        <!-- <p>{{task.date_end}}</p> -->
+                        <p>{{task.date.completed|date:'M j Y:i'}}</p>
+    
+                    
+                    </a>        
+                </li>
+                {% endfor %}
+            </ul>    
+        </div>
+    </div>
+    
+    
+</main>
+{% endblock %}
+
+

@@ -1,0 +1,5 @@
+[
+  "PYTHON_TESTING/src/tests/test_main.py::test_home",
+  "PYTHON_TESTING/src/tests/test_main.py::test_inventarios",
+  "PYTHON_TESTING/src/tests/test_main.py::test_lista_repuestos"
+]

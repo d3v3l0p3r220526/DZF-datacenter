@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <img src="{% static 'images\descargazf.png' %}" alt="descargazf" width="350 " class="d-flex align-self-center mr-3">
+                     
+            <h1 style="text-align:center;">{{task.empresa}}</h1>
+
+            {{error}}
+            
+
+            <form method="POST" class="card card-body">               
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <button>
+                    Actualizar                
+                </button>
+            </form>   
+            <form action="{% url 'complete_task' task.id %}" method="POST">
+                {% csrf_token %}
+                <button>
+                    Complete
+                </button>
+            </form>   
+            <form action="{% url 'complete_task' task.id %}" method="POST">
+                {% csrf_token %}
+                <button>
+                    Eliminar
+                </button>
+            </form> 
+            
+                    
+                    
+                
+                    
+
+                 
+                           
+            
+
+        </div>
+    </div>  
+</main>
+
+{% endblock %}
